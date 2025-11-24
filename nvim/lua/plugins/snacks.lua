@@ -18,6 +18,25 @@ return {
                 explorer = { auto_close = true },
             },
         },
+        zen = {
+            enabled = true,
+            win = {
+                width = 120,
+                backdrop = {
+                    transparent = false,
+                },
+            },
+            toggles = {
+                dim = false,
+                diagnostics = true,
+            },
+            zoom = {
+                win = {
+                    width = 180,
+                    backdrop = true
+                }
+            }
+        },
     },
     keys = {
         -- Explorer
@@ -50,5 +69,8 @@ return {
         { "gt",         function() Snacks.picker.lsp_type_definitions() end, desc = "Goto Type Definition" },
         { "gai",        function() Snacks.picker.lsp_incoming_calls() end,   desc = "Goto Calls Incoming" },
         { "gao",        function() Snacks.picker.lsp_outgoing_calls() end,   desc = "Goto Calls Outgoing" },
+
+        -- Zen
+        { "<leader>z",  function() Snacks.zen() end,                         desc = "Toggle Zen Mode" },
     },
 }

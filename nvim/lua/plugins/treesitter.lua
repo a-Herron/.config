@@ -1,29 +1,33 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    branch = 'main',
+    branch = "master",
     lazy = false,
     build = ":TSUpdate",
-    opts_extended = { "ensure_installed" },
-    opts = {
-        indent = { enable = true },
-        highlight = { enable = true },
-        folds = { enable = true },
-        ensure_installed = {
-            "bash",
-            "c",
-            "lua",
-            "html",
-            "javascript",
-            "jsdoc",
-            "json",
-            "luadoc",
-            "markdown",
-            "tsx",
-            "typescript",
-            "vim",
-            "vimdoc",
-            "yaml",
-            "go",
-        },
-    }
+    config = function()
+        require('nvim-treesitter.configs').setup {
+            sync_install = false,
+            auto_install = true,
+            ignore_install = {},
+            modules = {},
+            highlight = { enable = true },
+            folds = { enable = true },
+            ensure_installed = {
+                "bash",
+                "c",
+                "lua",
+                "html",
+                "javascript",
+                "jsdoc",
+                "json",
+                "luadoc",
+                "markdown",
+                "tsx",
+                "typescript",
+                "vim",
+                "vimdoc",
+                "yaml",
+                "go",
+            },
+        }
+    end
 }
