@@ -6,7 +6,7 @@ return {
             lsp_format = "fallback",
         },
         formatters_by_ft = {
-            go = { "goimports" },
+            go = { "golangci-lint" },
             html = { "prettier" },
         }
     },
